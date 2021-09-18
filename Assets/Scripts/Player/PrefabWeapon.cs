@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class PrefabWeapon : MonoBehaviour {
+public class PrefabWeapon : MonoBehaviour
+{
 
-	public Transform firePoint;
-	public GameObject bulletPrefab;
-	public AudioSource sound;
-	
-	void Update () {
-		if (CrossPlatformInputManager.GetButtonDown("Fire1"))
-		{
-			Shoot();
-		}
-	}
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public AudioSource sound;
 
-	void Shoot ()
-	{
-		sound.Play();
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-	}
+    void Update()
+    {
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Return))
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        sound.Play();
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
 }

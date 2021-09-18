@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         RestartButton.SetActive(false);
         myrigidbody = GetComponent<Rigidbody2D>();
     }
-    void FixedUpdate()
+    void Update()
     {
         horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
