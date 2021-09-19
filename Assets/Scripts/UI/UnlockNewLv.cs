@@ -11,13 +11,14 @@ public class UnlockNewLv : MonoBehaviour
     {
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
-   public void UnlockNewLevel()
-   {
-      SceneManager.LoadScene(nextSceneLoad);
+    public void UnlockNewLevel()
+    {
+        SceneManager.LoadScene(nextSceneLoad);
 
-      if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-      {
-          PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-      }
-   }
+        if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+        {
+            PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+        }
+    }
 }
+

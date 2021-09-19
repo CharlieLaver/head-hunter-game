@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class cameraFollow : MonoBehaviour
 {
-    public Transform PlayerTransform;
-    private Vector3 camOffset;
-
-    [Range(0.01f, 1.0f)]
-    public float SmoothFactor = 0.5f;
+    Transform PlayerTransform;
+    Vector3 camOffset;
+    float SmoothFactor = 1f;
 
     void Start()
     {
+        PlayerTransform = GameObject.FindWithTag("Player").transform;
         camOffset = transform.position - PlayerTransform.position;
     }
 
